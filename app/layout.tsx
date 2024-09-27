@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-import MainHeader from "@/components/main-header";
+import MainHeader from "~/components/main-header";
+import Footer from "~/components/footer";
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -11,6 +12,7 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   title: "Movie Database",
   description: "Some description",
+  icons: {},
 };
 
 export default function RootLayout({
@@ -21,10 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sourceSans.className} antialiased`}>
-        <div className="flex flex-col min-h-screen overflow-x-hidden overflow-y-auto">
-          <MainHeader />
-          {children}
-        </div>
+        <MainHeader />
+        {children}
+        <Footer />
       </body>
     </html>
   );

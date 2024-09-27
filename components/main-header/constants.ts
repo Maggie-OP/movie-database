@@ -2,7 +2,7 @@ export const SECTION_LINKS = [
   {
     name: "Movies",
     sections: [
-      { name: "Popular", href: "/movies/popular" },
+      { name: "Popular", href: "/movies" },
       { name: "New Playing" },
       { name: "Upcoming" },
       { name: "Top Rated" },
