@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   display: flex;
   flex-direction: column;
@@ -17,4 +21,10 @@ body {
 
 ::-webkit-scrollbar-track {
   background-color: #fff;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
