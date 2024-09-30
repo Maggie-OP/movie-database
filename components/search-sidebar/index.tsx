@@ -1,14 +1,38 @@
 import Accordion from "../accordion/Accordion";
 import AccordionContentLabel from "../accordion/AccordionContentLabel";
+import AccordionContentItem from "../accordion/AccordionContentItem";
+import CustomSelect from "./components/custom-select";
+import CustomRadio from "./components/custom-radio";
+import CustomCheckbox from "./components/custom-checkbox";
+import { SearchButton } from "./styles";
 
-export default function SearchSidebar() {
+import { Genre } from "~/app/movies/types";
+import { SHOW_ME_OPTIONS, SORT_BY_OPTIONS } from "./constants";
+
+interface SearchSidebarProps {
+  genres: Genre[];
+}
+
+export default function SearchSidebar({ genres }: SearchSidebarProps) {
   return (
-    <section className="max-w-[260px] w-full">
+    <>
       <Accordion title="Sort">
-        <div>
+        <AccordionContentItem>
           <AccordionContentLabel label="Sort Results By" info="lll" />
-        </div>
+          <CustomSelect options={SORT_BY_OPTIONS} name="sort_by" id="sort_by" />
+        </AccordionContentItem>
       </Accordion>
-    </section>
+      <Accordion title="Filter">
+        <AccordionContentItem>
+          <AccordionContentLabel label="Show me" />
+          <CustomRadio options={SHOW_ME_OPTIONS} />
+        </AccordionContentItem>
+        <AccordionContentItem>
+          <AccordionContentLabel label="Genres" />
+          <CustomCheckbox name="with_genres" options={genres} />
+        </AccordionContentItem>
+      </Accordion>
+      <SearchButton>Search</SearchButton>
+    </>
   );
 }

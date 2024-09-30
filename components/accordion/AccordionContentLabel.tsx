@@ -1,7 +1,7 @@
 import Image from "next/image";
-import questionIcon from "~/assets/icons/question-icon.svg";
+import { Label, Tooltip } from "./styles";
 
-import { Tooltip } from "@mui/material";
+import questionIcon from "~/assets/icons/question-icon.svg";
 
 interface AccordionContentLabelProps {
   label: string;
@@ -13,13 +13,22 @@ export default function AccordionContentLabel({
   info,
 }: AccordionContentLabelProps) {
   return (
-    <label className="flex gap-[6px] text-base font-thin">
+    <Label>
       <span>{label}</span>
       {info && (
-        <Tooltip title={info}>
-          <Image src={questionIcon} alt="info" width={16} height={16} />
-        </Tooltip>
+        <div>
+          <Image
+            src={questionIcon}
+            alt="info"
+            aria-describedby="filter-option-tooltip"
+            width={16}
+            height={16}
+          />
+          <Tooltip role="tooltip" id="filter-option-tooltip">
+            {info}
+          </Tooltip>
+        </div>
       )}
-    </label>
+    </Label>
   );
 }

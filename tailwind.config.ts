@@ -21,10 +21,12 @@ const config: Config = {
         "text-sup": ["4px", "4px"],
         base: ["16px", "18px"],
         xl: ["18px", "24px"],
+        xxl: ["20px", "20px"],
         "heading-3": ["20px", "20px"],
         "heading-1": ["26px", "32px"],
         "footer-text": ["18px", "24px"],
         "pagination-btn": ["24px", "28px"],
+        m: ["14px", "14px"],
       },
       boxShadow: {
         shadow: "0 2px 8px 0 rgb(0,0,0,0.1)",

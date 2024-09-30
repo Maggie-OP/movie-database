@@ -21,3 +21,12 @@ export interface GetMoviesResponse {
   total_pages: number;
   total_results: number;
 }
+
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface GetGenresResponse {
+  genres: Genre[];
+}
