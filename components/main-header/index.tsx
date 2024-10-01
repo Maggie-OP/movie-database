@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import Image from "next/image";
 import {
@@ -27,6 +28,7 @@ import closeIcon from "~/assets/icons/close-icon.svg";
 import { SECTION_LINKS } from "./constants";
 
 const MainHeader = () => {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -40,13 +42,19 @@ const MainHeader = () => {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      handleCloseMenu();
+    }
+  }, [pathname]);
+
   return (
     <Header>
       <CustomLink href="/" className="mr-4">
         <Logo src={logo} alt="Logo" width={154} height={20} />
       </CustomLink>
       <MenuContent className={isMenuOpen ? "is-open" : ""}>
-        <List>
+        <List className="with-padding">
           <li>
             <IconButton aria-label="Close menu" onClick={handleCloseMenu}>
               <Image src={closeIcon} alt="close menu" width={40} height={40} />

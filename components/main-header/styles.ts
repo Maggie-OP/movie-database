@@ -64,9 +64,6 @@ export const MenuContent = styled.div`
     z-index: 20;
     transition: max-width 100ms ease-out;
     overflow: hidden;
-    & ul {
-      padding: 20px;
-    }
     &.is-open {
       max-width: 300px;
       transition: max-width 200ms ease-out;
@@ -88,6 +85,10 @@ export const List = styled.ul`
   @media (max-width: 860px) {
     flex-direction: column;
     align-items: flex-start;
+    &.with-padding {
+      padding: 20px;
+      width: 100%;
+    }
     & .mobile-hidden {
       display: none;
     }
@@ -108,6 +109,10 @@ export const ListItem = styled.li`
   }
   &.p {
     padding: 8px;
+  }
+  @media (max-width: 860px) {
+    flex-direction: column;
+    width: 100%;
   }
 `;
 
