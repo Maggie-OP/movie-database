@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 import {
   AddNewItem,
@@ -7,59 +9,51 @@ import {
   LanguageItem,
   List,
   ListItem,
-  ListItemLink,
   Logo,
   MenuContent,
-  MenuToggle,
-  MenuToggleLabel,
-  Popup,
-  PopupList,
-  PopupListItem,
+  IconButton,
   RightSideList,
   SearchItem,
+  Overlap,
 } from "./styles";
+import ListItemWithPopup from "./components/list-item-with-popup";
 
 import logo from "../../assets/icons/logo.svg";
 import plusIcon from "../../assets/icons/plus-icon.svg";
 import searchIcon from "../../assets/icons/search-icon.svg";
 import menuIcon from "~/assets/icons/menu-icon.svg";
+import closeIcon from "~/assets/icons/close-icon.svg";
 
 import { SECTION_LINKS } from "./constants";
 
 const MainHeader = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const handleCloseMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    document.body.style.overflowY = isMenuOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  }, [isMenuOpen]);
+
   return (
     <Header>
       <CustomLink href="/" className="mr-4">
         <Logo src={logo} alt="Logo" width={154} height={20} />
       </CustomLink>
-      <MenuToggleLabel htmlFor="toggle-menu">
-        <Image src={menuIcon} alt="header menu" width={40} height={40} />
-      </MenuToggleLabel>
-      <MenuToggle type="checkbox" id="toggle-menu" />
-      <MenuContent className="menu">
+      <MenuContent className={isMenuOpen ? "is-open" : ""}>
         <List>
-          {SECTION_LINKS.map(({ name, sections }) => (
-            <ListItem key={name} aria-haspopup>
-              <ListItemLink href="" aria-label={name}>
-                {name}
-              </ListItemLink>
-              {!!sections?.length && (
-                <Popup className="popup">
-                  <PopupList>
-                    {sections.map((section) => (
-                      <PopupListItem key={section.name}>
-                        <Link
-                          href={section.href || ""}
-                          className="w-full p-[6px]"
-                        >
-                          {section.name}
-                        </Link>
-                      </PopupListItem>
-                    ))}
-                  </PopupList>
-                </Popup>
-              )}
-            </ListItem>
+          <li>
+            <IconButton aria-label="Close menu" onClick={handleCloseMenu}>
+              <Image src={closeIcon} alt="close menu" width={40} height={40} />
+            </IconButton>
+          </li>
+          {SECTION_LINKS.map((item) => (
+            <ListItemWithPopup listItem={item} key={item.name} />
           ))}
           {["Login", "Join TMBD"].map((item) => (
             <ListItem key={item} className="desktop-hidden p">
@@ -85,7 +79,14 @@ const MainHeader = () => {
         <SearchItem>
           <Image src={searchIcon} alt="Search" width={28} height={28} />
         </SearchItem>
+        <IconButton onClick={handleToggleMenu} aria-label="Open menu">
+          <Image src={menuIcon} alt="header menu" width={40} height={40} />
+        </IconButton>
       </RightSideList>
+      <Overlap
+        className={isMenuOpen ? "is-open" : ""}
+        onClick={handleCloseMenu}
+      />
     </Header>
   );
 };

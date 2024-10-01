@@ -24,27 +24,26 @@ export const Logo = styled(Image)`
   height: 20px;
 `;
 
-export const MenuToggle = styled.input`
+export const IconButton = styled.button`
   display: none;
-  @media (max-width: 820px) {
+  @media (max-width: 860px) {
     display: block;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    &:checked ~ .menu {
-      display: flex;
-    }
   }
 `;
 
-export const MenuToggleLabel = styled.label`
+export const Overlap = styled.div`
   display: none;
-  @media (max-width: 820px) {
-    display: flex;
-    cursor: pointer;
-    order: 4;
-    margin-left: 16px;
-    min-width: 40px;
+
+  @media (max-width: 860px) {
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    &.is-open {
+      display: block;
+    }
   }
 `;
 
@@ -56,17 +55,22 @@ export const MenuContent = styled.div`
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 64px;
+    top: 0;
     right: 0;
-    padding: 20px;
+    height: 100%;
     width: 100%;
     max-width: 0;
-    height: 0;
-    max-width: 300px;
-    height: calc(100vh - 64px);
     background: #032541;
     z-index: 20;
-    display: none;
+    transition: max-width 100ms ease-out;
+    overflow: hidden;
+    & ul {
+      padding: 20px;
+    }
+    &.is-open {
+      max-width: 300px;
+      transition: max-width 200ms ease-out;
+    }
   }
 `;
 
@@ -104,46 +108,6 @@ export const ListItem = styled.li`
   }
   &.p {
     padding: 8px;
-  }
-`;
-
-export const ListItemLink = styled(Link)`
-  padding: 8px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
-`;
-
-export const Popup = styled.div`
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  top: 100%;
-  width: 170px;
-  border-radius: 6px;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  visibility: hidden;
-`;
-
-export const PopupList = styled.ul`
-  padding-block: 8px;
-`;
-
-export const PopupListItem = styled.li`
-  display: flex;
-  width: 100%;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
-  color: #000;
-  padding: 3px 24px;
-  &:hover {
-    background: #f8f9fa;
-  }
-  & a {
-    width: 100%;
-    padding: 6px;
   }
 `;
 
