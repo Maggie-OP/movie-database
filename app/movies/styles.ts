@@ -15,3 +15,5 @@ export const Title = styled.h1`
   line-height: 32px;
   font-weight: 600;
 `;
+
+export const ErrorText = styled.p``;

@@ -25,7 +25,7 @@ export default function PopularMovies({
   genres,
 }: PopularMoviesProps) {
   const [params, setParams] = useState("");
-  const [isInfiniteScrollUnabled, setIsInfiniteScrollUnabled] = useState(false);
+  const [isInfiniteScrollEnabled, setIsInfiniteScrollEnabled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState(moviesInitialData);
 
@@ -37,47 +37,54 @@ export default function PopularMovies({
     const params = new URLSearchParams(
       formData as unknown as Record<string, string>
     ).toString();
-    setParams(params);
     try {
-      const response = await discoverMovies(params);
-      setData(response);
+      setParams(params);
+      if (params) {
+        const response = await discoverMovies(params);
+        setData(response);
+      }
     } catch (error) {
-      console.error("Failed to fetch movies:", error);
+      throw new Error("Failed to fetch movies");
     }
   };
 
   const handleFetch = async () => {
     setIsLoading(true);
-    let response: GetMoviesResponse;
-    if (params) {
-      response = await discoverMovies(`${params}&page=${page + 1}`);
-    } else {
-      response = await getPopularMovies(`page=${page + 1}`);
+    try {
+      let response: GetMoviesResponse;
+      if (params) {
+        response = await discoverMovies(`${params}&page=${page + 1}`);
+      } else {
+        response = await getPopularMovies(`page=${page + 1}`);
+      }
+      const { results, ...rest } = response;
+      setData((prev) => ({
+        results: [...prev.results, ...results],
+        ...rest,
+      }));
+      setIsLoading(false);
+    } catch (err) {
+      setIsLoading(false);
+      throw new Error("Failed to fetch movies");
     }
-    const { results, ...rest } = response;
-    setData((prev) => ({
-      results: [...prev.results, ...results],
-      ...rest,
-    }));
-    setIsLoading(false);
   };
 
   useEffect(() => {
     if (inView) {
-      if (!isLoading && page < total_pages && isInfiniteScrollUnabled) {
+      if (!isLoading && page < total_pages && isInfiniteScrollEnabled) {
         handleFetch();
       }
     }
-  }, [inView, isLoading]);
+  }, [inView, isLoading, page, total_pages, isInfiniteScrollEnabled]);
 
   useEffect(() => {
-    setIsInfiniteScrollUnabled(false);
+    setIsInfiniteScrollEnabled(false);
   }, [params]);
 
   const handleLoadMore = async () => {
-    if (!isInfiniteScrollUnabled && page < total_pages) {
+    if (!isInfiniteScrollEnabled && page < total_pages) {
       await handleFetch();
-      setIsInfiniteScrollUnabled(true);
+      setIsInfiniteScrollEnabled(true);
     }
   };
 
