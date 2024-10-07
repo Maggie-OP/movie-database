@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { SectionLink } from "../constants";
+import { NavLink } from "/utils/types";
 
 import Link from "next/link";
-import { ListItem } from "../styles";
+import Image from "next/image";
+import { ListItem } from "/components/main-header/styles";
 import {
   ListItemButton,
   MobileList,
@@ -13,12 +14,11 @@ import {
   PopupList,
   PopupListItem,
 } from "./styles";
-import Image from "next/image";
 
-import expandIcon from "~/assets/icons/expand-icon-white.svg";
+import expandIcon from "/assets/icons/expand-icon-white.svg";
 
 interface ListItemWithPopupProps {
-  listItem: SectionLink;
+  listItem: NavLink;
 }
 
 export default function ListItemWithPopup({
@@ -71,7 +71,7 @@ export default function ListItemWithPopup({
         >
           {sections?.map((section) => (
             <MobileListItem key={section.name}>
-              <Link href={section.href || ""}>{section.name}</Link>
+              <Link href={section.href || "/"}>{section.name}</Link>
             </MobileListItem>
           ))}
         </MobileList>

@@ -12,9 +12,9 @@ import {
   CardDescription,
 } from "./styles";
 
-import { Movie } from "~/app/movies/types";
+import { Movie } from "/app/movies/types";
 
-import defaultImage from "~/assets/default-image.svg";
+import defaultImage from "/assets/default-image.svg";
 
 interface MovieCardProps {
   movie: Movie;
@@ -24,7 +24,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
   return (
     <Card>
       <CardMedia>
-        <CardMediaLink href="" className="flex w-full h-[284px]">
+        <CardMediaLink href="/movies">
           <CardImage
             src={
               !!movie.poster_path
@@ -41,7 +41,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
       </CardMedia>
       <CardContent>
         <CardContentTitle>
-          <Link href="/">{movie.title}</Link>
+          <Link href="/movies">{movie.title}</Link>
         </CardContentTitle>
         <CardDescription>{movie.release_date}</CardDescription>
       </CardContent>

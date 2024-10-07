@@ -1,6 +1,6 @@
 "use server";
 
-import { APP_API, headers } from "~/utils/constants";
+import { APP_API, headers } from "/utils/constants";
 import { GetMoviesResponse, GetGenresResponse } from "../movies/types";
 
 export const getPopularMovies: (

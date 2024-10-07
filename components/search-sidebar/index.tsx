@@ -1,13 +1,13 @@
-import Accordion from "../accordion/Accordion";
-import AccordionContentLabel from "../accordion/AccordionContentLabel";
-import AccordionContentItem from "../accordion/AccordionContentItem";
-import CustomSelect from "./components/custom-select";
-import CustomRadio from "./components/custom-radio";
-import CustomCheckbox from "./components/custom-checkbox";
+import Accordion from "/components/accordion";
+import AccordionContentLabel from "/components/accordion-content-label";
+import AccordionContentItem from "/components/accordion-content-item";
+import CustomSelect from "/components/custom-select";
+import CustomRadio from "/components/custom-radio";
+import CustomCheckbox from "/components/custom-checkbox";
 import { SearchButton } from "./styles";
 
-import { Genre } from "~/app/movies/types";
-import { SHOW_ME_OPTIONS, SORT_BY_OPTIONS } from "./constants";
+import { Genre } from "/app/movies/types";
+import { SHOW_ME_OPTIONS, SORT_BY_OPTIONS } from "/utils/constants";
 
 interface SearchSidebarProps {
   genres: Genre[];

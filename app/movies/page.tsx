@@ -1,6 +1,6 @@
 import { getGenres, getPopularMovies } from "../lib/api";
 
-import PopularMovies from "~/components/PopularMovies";
+import PopularMovies from "/components/PopularMovies";
 import { Main, Title } from "./styles";
 
 import { Suspense } from "react";

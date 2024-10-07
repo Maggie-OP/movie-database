@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Label, Tooltip } from "./styles";
 
-import questionIcon from "~/assets/icons/question-icon.svg";
+import questionIcon from "/assets/icons/question-icon.svg";
 
 interface AccordionContentLabelProps {
   label: string;

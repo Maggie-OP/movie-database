@@ -36,28 +36,6 @@ export const ExpandIcon = styled(Image)`
   }
 `;
 
-export const AccordionContenrt = styled.div`
+export const AccordionContent = styled.div`
   border-top: 1px solid #e3e3e3;
-`;
-
-export const AccordionContentItem = styled.div`
-  padding: 14px 16px;
-  border-bottom: 1px solid #e3e3e3;
-  &:last-of-type {
-    border-bottom: 0;
-  }
-`;
-
-export const Label = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 100;
-  margin-bottom: 10px;
-`;
-
-export const Tooltip = styled.div`
-  display: none;
 `;

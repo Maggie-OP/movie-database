@@ -17,15 +17,16 @@ import {
   SearchItem,
   Overlap,
 } from "./styles";
-import ListItemWithPopup from "./components/list-item-with-popup";
 
-import logo from "../../assets/icons/logo.svg";
-import plusIcon from "../../assets/icons/plus-icon.svg";
-import searchIcon from "../../assets/icons/search-icon.svg";
-import menuIcon from "~/assets/icons/menu-icon.svg";
-import closeIcon from "~/assets/icons/close-icon.svg";
+import ListItemWithPopup from "/components/list-item-with-popup";
 
-import { SECTION_LINKS } from "./constants";
+import logo from "/assets/icons/logo.svg";
+import plusIcon from "/assets/icons/plus-icon.svg";
+import searchIcon from "/assets/icons/search-icon.svg";
+import menuIcon from "/assets/icons/menu-icon.svg";
+import closeIcon from "/assets/icons/close-icon.svg";
+
+import { NAV_LINKS } from "/utils/constants";
 
 const MainHeader = () => {
   const pathname = usePathname();
@@ -50,7 +51,7 @@ const MainHeader = () => {
 
   return (
     <Header>
-      <CustomLink href="/" className="mr-4">
+      <CustomLink href="/">
         <Logo src={logo} alt="Logo" width={154} height={20} />
       </CustomLink>
       <MenuContent className={isMenuOpen ? "is-open" : ""}>
@@ -60,7 +61,7 @@ const MainHeader = () => {
               <Image src={closeIcon} alt="close menu" width={40} height={40} />
             </IconButton>
           </li>
-          {SECTION_LINKS.map((item) => (
+          {NAV_LINKS.map((item) => (
             <ListItemWithPopup listItem={item} key={item.name} />
           ))}
           {["Login", "Join TMBD"].map((item) => (

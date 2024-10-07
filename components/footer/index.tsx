@@ -11,9 +11,9 @@ import {
   ListItem,
 } from "./styles";
 
-import logo from "../../assets/icons/logo-footer.svg";
+import logo from "/assets/icons/logo.svg";
 
-import { FOOTER_SECTIONS } from "./constants";
+import { FOOTER_SECTIONS } from "/utils/constants";
 
 export default function Footer() {
   return (
@@ -30,7 +30,7 @@ export default function Footer() {
               <ul>
                 {items.map(({ name }) => (
                   <ListItem key={name}>
-                    <Link href="">{name}</Link>
+                    <Link href="/">{name}</Link>
                   </ListItem>
                 ))}
               </ul>

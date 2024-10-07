@@ -6,10 +6,10 @@ import {
   StyledAccordion,
   AccordionHeader,
   ExpandIcon,
-  AccordionContenrt,
+  AccordionContent,
 } from "./styles";
 
-import expandIcon from "~/assets/icons/expand-icon.svg";
+import expandIcon from "/assets/icons/expand-icon.svg";
 
 interface AccordionProps {
   title: string;
@@ -33,7 +33,7 @@ export default function Accordion({ title, children }: AccordionProps) {
           className={!isOpen ? "expand" : ""}
         />
       </AccordionHeader>
-      <AccordionContenrt>{children}</AccordionContenrt>
+      <AccordionContent>{children}</AccordionContent>
     </StyledAccordion>
   );
 }

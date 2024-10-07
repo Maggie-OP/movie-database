@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-import SearchSidebar from "../search-sidebar";
-import MovieCard from "../movie-card";
+import SearchSidebar from "/components/search-sidebar";
+import MovieCard from "/components/movie-card";
 import {
   PageWrapper,
   Form,
@@ -12,8 +12,8 @@ import {
   LoadMoreBtn,
 } from "./styles";
 
-import { Genre, GetMoviesResponse } from "~/app/movies/types";
-import { discoverMovies, getPopularMovies } from "~/app/lib/api";
+import { Genre, GetMoviesResponse } from "/app/movies/types";
+import { discoverMovies, getPopularMovies } from "/app/lib/api";
 
 interface PopularMoviesProps {
   moviesInitialData: GetMoviesResponse;

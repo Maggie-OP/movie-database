@@ -1,4 +1,4 @@
-import { RadioWrapper, Radio } from "../styles";
+import { RadioWrapper, Radio } from "./styles";
 
 interface RadioOption {
   label: string;

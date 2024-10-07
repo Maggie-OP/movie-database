@@ -1,4 +1,4 @@
-import { Checkboxes, CheckboxLabel } from "../styles";
+import { Checkboxes, CheckboxLabel } from "./styles";
 
 interface CheckboxOption {
   name: string;
