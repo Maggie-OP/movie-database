@@ -8,20 +8,20 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   background: #032541;
-  padding: 12px 40px;
-  min-height: 64px;
+  padding: 0.75rem 2.5rem;
+  min-height: 4rem;
   @media (max-width: 920px) {
-    padding-inline: 20px;
+    padding-inline: 1.25rem;
   }
 `;
 
 export const CustomLink = styled(Link)`
-  margin-right: 16px;
+  margin-right: 1rem;
 `;
 
 export const Logo = styled(Image)`
-  min-width: 154px;
-  height: 20px;
+  min-width: 9.625rem;
+  height: 1.25rem;
 `;
 
 export const IconButton = styled.button`
@@ -65,7 +65,7 @@ export const MenuContent = styled.div`
     transition: max-width 100ms ease-out;
     overflow: hidden;
     &.is-open {
-      max-width: 300px;
+      max-width: 18.75rem;
       transition: max-width 200ms ease-out;
     }
   }
@@ -74,9 +74,9 @@ export const MenuContent = styled.div`
 export const List = styled.ul`
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 16px;
-  line-height: 18px;
+  gap: 0.875rem;
+  font-size: 1rem;
+  line-height: 1.125rem;
   font-weight: 600;
   color: #fff;
   & .desktop-hidden {
@@ -86,7 +86,7 @@ export const List = styled.ul`
     flex-direction: column;
     align-items: flex-start;
     &.with-padding {
-      padding: 20px;
+      padding: 1.25rem;
       width: 100%;
     }
     & .mobile-hidden {
@@ -108,7 +108,7 @@ export const ListItem = styled.li`
     visibility: visible;
   }
   &.p {
-    padding: 8px;
+    padding: 0.5rem;
   }
   @media (max-width: 860px) {
     flex-direction: column;
@@ -118,7 +118,7 @@ export const ListItem = styled.li`
 
 export const RightSideList = styled(List)`
   margin-left: auto;
-  gap: 20px;
+  gap: 1.25rem;
   @media (max-width: 860px) {
     flex-direction: row;
     align-items: center;
@@ -126,22 +126,22 @@ export const RightSideList = styled(List)`
 `;
 
 export const AddNewItem = styled.li`
-  min-width: 20px;
+  min-width: 1.25rem;
 `;
 
 export const LanguageItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  padding: 4px;
-  margin-left: 16px;
+  border: 0.0625rem solid #fff;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  margin-left: 1rem;
   @media (max-width: 860px) {
     margin-left: 0;
   }
 `;
 
 export const SearchItem = styled.li`
-  min-width: 28px;
+  min-width: 1.75rem;
 `;

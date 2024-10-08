@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const PageWrapper = styled.section`
   flex: 1;
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
   @media (max-width: 780px) {
     flex-direction: column;
     & form {
@@ -15,32 +15,32 @@ export const PageWrapper = styled.section`
 `;
 
 export const Form = styled.form`
-  max-width: 260px;
+  max-width: 16.25rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 `;
 
 export const MoviesSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
   flex: 1;
 `;
 
 export const MoviesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 2rem;
 `;
 
 export const LoadMoreBtn = styled.button`
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 24px;
-  line-height: 28px;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   font-weight: 700;
   background: #01b4e4;
   color: #fff;

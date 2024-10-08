@@ -4,11 +4,11 @@ import styled from "styled-components";
 export const Label = styled.label`
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  line-height: 18px;
+  gap: 0.375rem;
+  font-size: 1rem;
+  line-height: 1.125rem;
   font-weight: 100;
-  margin-bottom: 10px;
+  margin-bottom: 0.625;
 `;
 
 export const Tooltip = styled.div`

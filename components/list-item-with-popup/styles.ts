@@ -3,9 +3,9 @@
 import styled from "styled-components";
 
 export const ListItemButton = styled.button`
-  padding: 8px;
-  font-size: 16px;
-  line-height: 24px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 600;
   & img {
     display: none;
@@ -15,7 +15,7 @@ export const ListItemButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: transform 200ms;
+    transition: transform 100ms;
     & img {
       display: inline-block;
       transform: rotate(-90deg);
@@ -31,10 +31,10 @@ export const Popup = styled.div`
   z-index: 10;
   left: 0;
   top: 100%;
-  width: 170px;
-  border-radius: 6px;
+  width: 10.625rem;
+  border-radius: 0.375rem;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.15);
   visibility: hidden;
   @media (max-width: 860px) {
     display: none;
@@ -42,23 +42,23 @@ export const Popup = styled.div`
 `;
 
 export const PopupList = styled.ul`
-  padding-block: 8px;
+  padding-block: 0.5rem;
 `;
 
 export const PopupListItem = styled.li`
   display: flex;
   width: 100%;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 1rem;
+  line-height: 1.125rem;
   font-weight: 400;
   color: #000;
-  padding: 3px 24px;
+  padding: 0.1875rem 1.5rem;
   &:hover {
     background: #f8f9fa;
   }
   & a {
     width: 100%;
-    padding: 6px;
+    padding: 0.375rem;
   }
 `;
 
@@ -71,13 +71,13 @@ export const MobileList = styled.ul`
     max-height: 0;
     width: 100%;
     transition: max-height 200ms ease-out;
-    padding: 0 20px;
+    padding: 0 1.25rem;
     &.is-open {
-      max-height: 200px;
+      max-height: 12.5rem;
     }
   }
 `;
 
 export const MobileListItem = styled.li`
-  padding-block: 4px;
+  padding-block: 0.25rem;
 `;

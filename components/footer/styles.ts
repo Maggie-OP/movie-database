@@ -5,18 +5,18 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  padding: 80px 40px;
+  padding: 5rem 2.5rem;
   margin-top: auto;
   background: #032541;
   @media (max-width: 920px) {
-    padding-inline: 20px;
+    padding-inline: 1.25rem;
   }
 `;
 
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 1.25rem;
   @media (max-width: 920px) {
     flex-wrap: wrap;
   }
@@ -32,14 +32,14 @@ export const LogoSection = styled.section`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 1rem;
     flex-wrap: wrap;
   }
 `;
 
 export const Logo = styled(Image)`
-  min-width: 130px;
-  height: 94px;
+  min-width: 8.125rem;
+  height: 5.875rem;
   position: absolute;
   bottom: 50%;
   right: 0;
@@ -50,21 +50,21 @@ export const Logo = styled(Image)`
 `;
 
 export const JoinLink = styled(Link)`
-  padding: 8px 24px;
-  border-radius: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #01b4e4;
-  border: 1px solid #fff;
+  border: 0.0625rem solid #fff;
   background: #fff;
 `;
 
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
   width: max-content;
   @media (max-width: 620px) {
     width: 100%;
@@ -73,20 +73,20 @@ export const Section = styled.section`
 `;
 
 export const SectionTitle = styled.h3`
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1;
   font-weight: 700;
   color: #fff;
   text-transform: uppercase;
-  padding-block: 4px;
+  padding-block: 0.25rem;
 `;
 
 export const ListItem = styled.li`
-  max-width: 260px;
+  max-width: 16.25rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   color: #fff;
 `;

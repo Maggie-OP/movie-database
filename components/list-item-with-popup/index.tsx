@@ -57,7 +57,7 @@ export default function ListItemWithPopup({
               <PopupList>
                 {sections.map((section) => (
                   <PopupListItem key={section.name}>
-                    <Link href={section.href || ""}>{section.name}</Link>
+                    <Link href={section.href || "/"}>{section.name}</Link>
                   </PopupListItem>
                 ))}
               </PopupList>

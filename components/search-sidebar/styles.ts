@@ -3,11 +3,11 @@
 import styled from "styled-components";
 
 export const SearchButton = styled.button`
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   font-weight: 600;
   color: #fff;
-  padding: 12px;
+  padding: 0.75rem;
   background: #01b4e4;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
 `;

@@ -2,10 +2,10 @@
 import styled from "styled-components";
 
 export const RadioWrapper = styled.div`
-  margin-top: 6px;
+  margin-top: 0.375;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
   &:first-of-type {
     margin-top: 0;
   }
@@ -19,13 +19,13 @@ export const Radio = styled.input`
   display: flex;
   &::before {
     content: "";
-    min-width: 14px;
-    height: 14px;
-    border: 1px solid #adb5bd;
+    min-width: 0.875rem;
+    height: 0.875rem;
+    border: 0.0625rem solid #adb5bd;
     border-radius: 50%;
   }
   &:checked::before {
     border-color: #01b4e4;
-    border-width: 4px;
+    border-width: 0.25rem;
   }
 `;

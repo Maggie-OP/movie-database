@@ -4,15 +4,15 @@ import styled from "styled-components";
 
 export const Main = styled.main`
   flex: 1;
-  padding: 30px 40px;
+  padding: 1.875rem 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 `;
 
 export const Title = styled.h1`
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.625rem;
+  line-height: 2rem;
   font-weight: 600;
 `;
 

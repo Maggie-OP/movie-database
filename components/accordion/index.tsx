@@ -22,7 +22,7 @@ export default function Accordion({ title, children }: AccordionProps) {
   const toggleOpen = () => setIsOpen((prev) => !prev);
 
   return (
-    <StyledAccordion className={isOpen ? "isOpen" : ""}>
+    <StyledAccordion>
       <AccordionHeader onClick={toggleOpen} type="button">
         <span>{title}</span>
         <ExpandIcon
@@ -33,7 +33,12 @@ export default function Accordion({ title, children }: AccordionProps) {
           className={!isOpen ? "expand" : ""}
         />
       </AccordionHeader>
-      <AccordionContent>{children}</AccordionContent>
+      <AccordionContent
+        className={isOpen ? "is-open" : ""}
+        aria-hidden={!isOpen}
+      >
+        {children}
+      </AccordionContent>
     </StyledAccordion>
   );
 }
